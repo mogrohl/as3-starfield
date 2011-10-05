@@ -21,15 +21,15 @@ package
         private var m_UpdateTicks:uint;
         private var m_InfoTF:TextField;
         private var m_FPSTF:TextField;
-        private var m_GameObjects:Array;
+        private var m_Stars:Array;
 
         public function Main():void
         {
             stage.frameRate = 60;
 
-            m_GameObjects = new Array;
+            m_Stars = new Array;
             for (var i:uint = 0; i < 512; i++)
-                m_GameObjects.push(addChild(new Star(stage)));
+                m_Stars.push(addChild(new Star(stage)));
 
             m_InfoTF = new TextField;
             m_InfoTF.embedFonts = true;
@@ -39,7 +39,7 @@ package
             m_InfoTF.background = true;
             m_InfoTF.backgroundColor = 0x000000;
             m_InfoTF.text = "Target Framerate: " + stage.frameRate + "\n" +
-                            "Stars: " + m_GameObjects.length;
+                            "Stars: " + m_Stars.length;
             m_InfoTF.x = 10;
             addChild(m_InfoTF);
 
